@@ -1,0 +1,41 @@
+{
+    "name": "hfg/hfgvideo",
+    "description": "Embed YouTube and Vimeo Videos",
+    "type": "craft-plugin",
+    "version": "1.0.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "hfgvideo"
+    ],
+    "license": "MIT",
+    "support": {
+       "email": "email@developer-website.tld",
+       "issues": "https://github.com/developer/repo/issues?state=open",
+       "source": "https://github.com/developer/repo",
+       "docs": "https://github.com/developer/repo/blob/master/README.md"
+     },
+    "authors": [
+        {
+            "name": "Niklas Sonnenschein",
+            "homepage": "https://niklassonnenschein.de"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+          "hfg\\hfgvideo\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "HfG Video",
+        "handle": "hfgvideo",
+        "hasCpSettings": true,
+        "hasCpSection": false,
+        "class": "hfg\\hfgvideo\\Hfgvideo"
+    }
+}
