@@ -11,7 +11,6 @@
 namespace hfg\hfgvideo;
 
 use hfg\hfgvideo\twigextensions\HfgvideoTwigExtension;
-use hfg\hfgvideo\models\Settings;
 
 use Craft;
 use craft\base\Plugin;
@@ -107,6 +106,8 @@ class Hfgvideo extends Plugin
           $segments = explode('/', $url_parts['path']);
 
           return '//player.vimeo.com/video/' . $segments[1] . '?' . http_build_query($this->getSettings()->vimeo);
+      } else if ($this->_isVimeoId($url)) {
+            return "//player.vimeo.com/video/" . $url . "?" . http_build_query($this->getSettings()->vimeo);
       }
 
 
@@ -140,33 +141,14 @@ class Hfgvideo extends Plugin
         return strripos($url, 'vimeo.com') !== FALSE;
     }
 
-
-    // Protected Methods
-    // =========================================================================
-
-    /**
-     * Creates and returns the model used to store the plugin’s settings.
-     *
-     * @return \craft\base\Model|null
+    /** 
+     * Is it a vimeo numeric ID?
+     * 
+     * @param string $url
+     * @return boolean
      */
-    protected function createSettingsModel()
-    {
-        return new Settings();
+    private function _isVimeoId($url) {
+        return is_numeric($url);
     }
 
-    /**
-     * Returns the rendered settings HTML, which will be inserted into the content
-     * block on the settings page.
-     *
-     * @return string The rendered settings HTML
-     */
-    protected function settingsHtml(): string
-    {
-        return Craft::$app->view->renderTemplate(
-            'hfgvideo/settings',
-            [
-                'settings' => $this->getSettings()
-            ]
-        );
-    }
 }
