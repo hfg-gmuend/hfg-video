@@ -148,7 +148,7 @@ class Hfgvideo extends Plugin
      * @return boolean
      */
     private function _isVimeoId($url) {
-        return is_numeric($url);
+        return is_numeric($url) !== FALSE;
     }
 
 }
