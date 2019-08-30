@@ -95,19 +95,20 @@ class Hfgvideo extends Plugin
     public function getEmbed($url)
     {
       $embed = false;
+      $settings = Craft::$app->config->getConfigFromFile("hfgvideo");
 
       if ($this->_isYoutube($url)) {
           $url_parts = parse_url($url);
           parse_str($url_parts['query'], $segments);
 
-          return '//www.youtube-nocookie.com/embed/' . $segments['v'] . '?' . http_build_query($this->getSettings()->youtube);
+          return '//www.youtube-nocookie.com/embed/' . $segments['v'] . '?' . http_build_query($settings["youtube"]);
       } else if ($this->_isVimeo($url)) {
           $url_parts = parse_url($url);
           $segments = explode('/', $url_parts['path']);
 
-          return '//player.vimeo.com/video/' . $segments[1] . '?' . http_build_query($this->getSettings()->vimeo);
+          return '//player.vimeo.com/video/' . $segments[1] . '?' . http_build_query($settings["vimeo"]);
       } else if ($this->_isVimeoId($url)) {
-            return "//player.vimeo.com/video/" . $url . "?" . http_build_query($this->getSettings()->vimeo);
+            return "//player.vimeo.com/video/" . $url . "?" . http_build_query($settings["vimeo"]);
       }
 
 
