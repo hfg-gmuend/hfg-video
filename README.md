@@ -40,4 +40,11 @@ return [
     ]
 ];
 ```
-## hfgvideo Overview
+
+## Usage
+
+This plugin exposes a twig function that renders a YouTube or Vimeo Embed. 
+
+```
+<iframe src="{{ generateEmbedUrl(url) }}" frameborder="0" allowfullscreen></iframe>
+```
