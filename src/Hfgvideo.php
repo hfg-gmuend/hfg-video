@@ -95,7 +95,7 @@ class Hfgvideo extends Plugin
     public function getEmbed($url)
     {
       $embed = false;
-      $settings = Craft::$app->config->getConfigFromFile("hfgvideo");
+      $settings = Craft::$app->config->getConfigFromFile("video");
 
       if ($this->_isYoutube($url)) {
           $url_parts = parse_url($url);
