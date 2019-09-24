@@ -1,5 +1,5 @@
 {
-    "name": "hfg/hfgvideo",
+    "name": "hfg/video",
     "description": "Embed YouTube and Vimeo Videos",
     "type": "craft-plugin",
     "version": "1.0.0",
@@ -11,12 +11,6 @@
         "hfgvideo"
     ],
     "license": "MIT",
-    "support": {
-       "email": "email@developer-website.tld",
-       "issues": "https://github.com/developer/repo/issues?state=open",
-       "source": "https://github.com/developer/repo",
-       "docs": "https://github.com/developer/repo/blob/master/README.md"
-     },
     "authors": [
         {
             "name": "Niklas Sonnenschein",
