@@ -8,7 +8,7 @@
  * @copyright Copyright (c) 2019 Niklas Sonnenschein
  */
 
-namespace hfg\hfgvideo\assetbundles\Hfgvideo;
+namespace hfg\hfgvideo\assetbundles\hfgvideo;
 
 use Craft;
 use craft\web\AssetBundle;
